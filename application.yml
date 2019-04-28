@@ -1,0 +1,14 @@
+server:
+  port: 9000 #服务端口
+spring:
+  application:
+    name: registry-server
+eureka:
+  client:
+    register-with-eureka: false #是否将自己注册为Euraka服务, 本身就是服务端, 不能注册
+    fetch-registry: false #是否从Eureka服务端获取注册信息
+    service-url: #Euraka 客户端与服务端交互的地址
+      defaultZone: http://127.0.0.1:${server.port}/eureka/
+  server:
+    enable-self-preservation: false #关闭自我保护
+    eviction-interval-timer-in-ms: 5000 #每5秒进行一次服务列表清理
