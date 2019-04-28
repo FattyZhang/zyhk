@@ -1,9 +1,0 @@
-server:
-  port: 9101
-spring:
-  application:
-    name: user-service
-eureka:
-  client:
-    service-url: # 一般最好从Eureka 服务端的配置文件复制, 客户端与服务端必须一致
-      defaultZone: http://127.0.0.1:9000/eureka/
