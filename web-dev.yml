@@ -17,6 +17,7 @@ zuul:
     user-service: # 可以自定义
       path: /user/** # 转发路径规则
       serviceId: user-service #必须是注册到Eureka的application.name
+      strip-prefix: false
   prefix: /api #路由前缀
   retryable: true
   ribbon:
