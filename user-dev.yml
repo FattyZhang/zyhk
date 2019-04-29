@@ -3,6 +3,19 @@ server:
 spring:
   application:
     name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.241:3306/zyhk_master
+    username: root
+    password: zyhk123
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+  redis:
+    host: 192.168.0.241
+    password: zyhk237@123
+    database: 4
+    
 eureka:
   client:
     service-url: # 一般最好从Eureka 服务端的配置文件复制, 客户端与服务端必须一致
