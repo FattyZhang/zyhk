@@ -18,6 +18,18 @@ zuul:
       path: /customer/** # 转发路径规则
       serviceId: customer-service #必须是注册到Eureka的application.name
       strip-prefix: false
+    routing-service: # 可以自定义
+      path: /routing/** # 转发路径规则
+      serviceId: routing-service #必须是注册到Eureka的application.name
+      strip-prefix: false
+    order-service: # 可以自定义
+      path: /order/** # 转发路径规则
+      serviceId: order-service #必须是注册到Eureka的application.name
+      strip-prefix: false
+    sms-service: # 可以自定义
+      path: /sms/** # 转发路径规则
+      serviceId: sms-service #必须是注册到Eureka的application.name
+      strip-prefix: false
   prefix: /api #路由前缀
   retryable: true
   ribbon:
