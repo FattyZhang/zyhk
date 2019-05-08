@@ -20,10 +20,15 @@ eureka:
   client:
     service-url: # 一般最好从Eureka 服务端的配置文件复制, 客户端与服务端必须一致
       defaultZone: http://127.0.0.1:9000/eureka/
+    registry-fetch-interval-seconds: 5 # 每5S注册一次自己
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMillisecond: 10000 # 熔断超时时长：10000ms
+            timeoutInMillisecond: 2000 # 熔断超时时长：10000ms
